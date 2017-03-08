@@ -1,0 +1,388 @@
+;==== TEST RUN 1 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 1.5
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 4.2
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 3.3
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+1.5000000000 
+4.2000000000 
+3.3000000000 
+
+The sum of the array is 9.00000000
+
+The mean of the array is 3.00000000
+
+The variance of the array is 1.29000000
+
+The harmonic mean of the array is 2.48387097
+
+The array pf reciprocals is 
+0.66666667
+0.23809524
+0.30303030
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 2.48387097
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 2 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 2.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 4.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 3.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 1.0
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+2.0000000000 
+4.0000000000 
+3.0000000000 
+1.0000000000 
+
+The sum of the array is 10.00000000
+
+The mean of the array is 2.50000000
+
+The variance of the array is 1.81250000
+
+The harmonic mean of the array is 1.92000000
+
+The array pf reciprocals is 
+0.50000000
+0.25000000
+0.33333333
+1.00000000
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 1.92000000
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 3 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 5.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 5.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 5.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 5.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 5.0
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+5.0000000000 
+5.0000000000 
+5.0000000000 
+5.0000000000 
+5.0000000000 
+
+The sum of the array is 25.00000000
+
+The mean of the array is 5.00000000
+
+The variance of the array is 0.00000000
+
+The harmonic mean of the array is 5.00000000
+
+The array pf reciprocals is 
+0.20000000
+0.20000000
+0.20000000
+0.20000000
+0.20000000
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 5.00000000
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 4 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -7.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -12.5
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -2.4
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -4.6
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -10.0
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+-7.0000000000 
+-12.5000000000 
+-2.4000000000 
+-4.6000000000 
+-10.0000000000 
+
+The sum of the array is -36.50000000
+
+The mean of the array is -7.30000000
+
+The variance of the array is 14.60200000
+
+The harmonic mean of the array is -5.22512387
+
+The array pf reciprocals is 
+-0.14285714
+-0.08000000
+-0.41666667
+-0.21739130
+-0.10000000
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: -5.22512387
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 5 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 6000000000.5
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 8000000000.3
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 3000000000.9
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 5000000000.6
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 3000000000.8
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 4000000000.7
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+6000000000.5000000000 
+8000000000.3000001907 
+3000000000.9000000954 
+5000000000.6000003815 
+3000000000.8000001907 
+4000000000.6999998093 
+
+The sum of the array is 29000000003.79999924
+
+The mean of the array is 4833333333.96666622
+
+The variance of the array is 3254629628922222592.00000000
+
+The harmonic mean of the array is 4260355030.41835356
+
+The array pf reciprocals is 
+0.00000000
+0.00000000
+0.00000000
+0.00000000
+0.00000000
+0.00000000
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 4260355030.41835356
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 6 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000081
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000008
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000025
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000073
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000000
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000041
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000000
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.000031
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+0.0000810000 
+0.0000080000 
+0.0000250000 
+0.0000730000 
+0.0000000000 
+0.0000410000 
+0.0000000000 
+0.0000310000 
+
+The sum of the array is 0.00025900
+
+The mean of the array is 0.00003238
+
+The variance of the array is 0.00000000
+
+The harmonic mean of the array is 0.00000000
+
+The array pf reciprocals is 
+12345.67901235
+125000.00000000
+40000.00000000
+13698.63013699
+inf
+24390.24390244
+inf
+32258.06451613
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 0.00000000
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 7 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.00000000003
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.00000000023
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -0.00000000014
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.00000000009
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.00000000032
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: -0.00000000045
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 0.00000000029
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+0.0000000000 
+0.0000000002 
+-0.0000000001 
+0.0000000001 
+0.0000000003 
+-0.0000000004 
+0.0000000003 
+
+The sum of the array is 0.00000000
+
+The mean of the array is 0.00000000
+
+The variance of the array is 0.00000000
+
+The harmonic mean of the array is 0.00000000
+
+The array pf reciprocals is 
+33333333333.33333206
+4347826086.95652199
+-7142857142.85714245
+11111111111.11111069
+3125000000.00000000
+-2222222222.22222233
+3448275862.06896591
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 0.00000000
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+
+;==== TEST RUN 8 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 12.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 19.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 10.0
+Do you have data to enter into the array (Y or N)? Y
+Enter the next float number: 11.0
+Do you have data to enter into the array (Y or N)? N
+
+Thank you this is the array: 
+12.0000000000 
+19.0000000000 
+10.0000000000 
+11.0000000000 
+
+The sum of the array is 52.00000000
+
+The mean of the array is 13.00000000
+
+The variance of the array is 13.50000000
+
+The harmonic mean of the array is 12.23713101
+
+The array pf reciprocals is 
+0.08333333
+0.05263158
+0.10000000
+0.09090909
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 12.23713101
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
+;==== TEST RUN 9 ===================================================================================
+This driver program will start the main program of Assignment 6 developed by Sina Amini 
+
+Welcome to Array Processing
+
+Do you have data to enter into the array (Y or N)? N
+
+This assembly program will now terminate and send the harmonic mean to the driver. 
+
+The driver received this number: 0.00000000
+
+Have a nice day. The driver will return 0 to the operating system. Bye.
+
