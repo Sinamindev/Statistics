@@ -63,30 +63,3 @@ double* variance(double datarray[], long rsi)
 
   return twonumbers;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

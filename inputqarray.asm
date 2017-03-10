@@ -29,21 +29,21 @@
 
 global inputqarray					;makes input array a callable function
 
-extern printf                                               ;External C++ function for writing to standard output device
+extern printf						;External C++ function for writing to standard output device
 
-extern scanf                                                ;External C++ function for reading from the standard input device
+extern scanf						;External C++ function for reading from the standard input device
 
-extern getchar					;External C++ function for reading characters from standard input device
+extern getchar						;External C++ function for reading characters from standard input device
 
-segment .data                                               ;Place initialized data here
+segment .data						;Place initialized data here
 
 promptmessage1 		db "Do you have data to enter into the array (Y or N)? ", 0
 
 promptmessage2 		db "Enter the next float number: ", 0
 
-stringformat 		db "%s", 0                    ;general string format
+stringformat 		db "%s", 0                    	;general string format
 
-eight_byte_format 	db "%lf", 0                         	;general 8-byte float format
+eight_byte_format 	db "%lf", 0						;general 8-byte float format
 
 segment .bss                                                ;Place un-initialized data here.
 align 64                                                    ;Insure that the inext data declaration starts on a 64-byte boundar.
@@ -57,9 +57,9 @@ inputqarray:					;Entry point
 
 ;==========================================================================================================================================================================
 
-mov r15, 0					;place 0 into r15 for count
+mov r15, 0								;place 0 into r15 for count
 mov r14, 0x0000000000000059				;places 'Y' into r14 for comparison 
-mov r13, rdi					;moves data array into r13
+mov r13, rdi							;moves data array into r13
 
 ;==== Begin while loop ====================================================================================================================================================
 topofloop:					;Entry point for while loop

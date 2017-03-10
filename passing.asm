@@ -32,23 +32,23 @@ extern printf                                               ;External C++ functi
 
 extern scanf                                                ;External C++ function for reading from the standard input device
 
-extern getchar					;External C++ function for reading characters from standard input device
+extern getchar												;External C++ function for reading characters from standard input device
 
-extern inputqarray					;External function for reading data into an array
+extern inputqarray											;External function for reading data into an array
 
-extern outputdatarray				;External C++ function for outputting data in an array
+extern outputdatarray										;External C++ function for outputting data in an array
 
-extern mean					;External function for finding average of dat in an array
+extern mean													;External function for finding average of dat in an array
 
-extern variance					;External C++ function for calculating variance of data in an array
+extern variance												;External C++ function for calculating variance of data in an array
 
-extern harmonicmean					;External C++ function for calculating harmonic mean of dat an array
+extern harmonicmean											;External C++ function for calculating harmonic mean of dat an array
 
-extern sum					;External function for calculating the sum of an array
+extern sum													;External function for calculating the sum of an array
 
-global passing                                        	;This makes passing callable by functions outside of this file.
+global passing                                        		;This makes passing callable by functions outside of this file.
 
-%include "debug.inc"				;Allows debug.inc to be used in this asm file
+%include "debug.inc"										;Allows debug.inc to be used in this asm file
 
 segment .data                                               ;Place initialized data here
 

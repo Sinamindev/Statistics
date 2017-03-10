@@ -27,13 +27,13 @@
 ;  Begin comments: 61
 ;  Optimal print specification: Landscape, 7 points or smaller, monospace, 8½x11 paper
 
-global reciprocals					;This makes passing callable by functions outside of this file.
+global reciprocals											;This makes passing callable by functions outside of this file.
 
 extern printf                                               ;External C++ function for writing to standard output device
 
 extern scanf                                                ;External C++ function for reading from the standard input device
 
-%include "debug.inc"				;Allow the debugger to be called by this asm file. 
+%include "debug.inc"										;Allow the debugger to be called by this asm file. 
 
 segment .data                                               ;Place initialized data here
 
@@ -43,9 +43,9 @@ align 64                                                    ;Insure that the ine
 
 backuparea resb 832                                         ;Create an array for backup storage having 832 bytes.
 
-localbackuparea resb 832				;reserve space for backup
+localbackuparea resb 832									;reserve space for backup
 
-segment .text					;Place executable instructions in this segment.
+segment .text												;Place executable instructions in this segment.
 
 ;==========================================================================================================================================================================
 reciprocals: ;===== Begin the application here: initializing the pointer array ============================================================================================

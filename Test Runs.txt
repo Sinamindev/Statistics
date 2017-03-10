@@ -1,5 +1,5 @@
 ;==== TEST RUN 1 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -37,7 +37,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 2 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -79,7 +79,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 3 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -125,7 +125,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 4 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -171,7 +171,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 5 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -221,7 +221,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 6 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -279,7 +279,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 7 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -333,7 +333,7 @@ Have a nice day. The driver will return 0 to the operating system. Bye.
 
 
 ;==== TEST RUN 8 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 
@@ -374,7 +374,7 @@ The driver received this number: 12.23713101
 Have a nice day. The driver will return 0 to the operating system. Bye.
 
 ;==== TEST RUN 9 ===================================================================================
-This driver program will start the main program of Assignment 6 developed by Sina Amini 
+This driver program will start the main program developed by Sina Amini 
 
 Welcome to Array Processing
 

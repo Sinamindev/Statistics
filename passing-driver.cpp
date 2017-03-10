@@ -40,7 +40,7 @@ extern "C" double passing();
 int main(){
   double return_code = 9.99;
  
-  printf("%s","\nThis driver program will start the main program of Assignment 6 developed by Sina Amini \n\n");
+  printf("%s","\nThis driver program will start the main program developed by Sina Amini \n\n");
   return_code = passing();
   printf("%s%1.8f\n\n","The driver received this number: ", return_code);
   printf("%s\n","Have a nice day. The driver will return 0 to the operating system. Bye.");

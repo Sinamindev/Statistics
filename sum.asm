@@ -33,11 +33,11 @@ extern printf                                               ;External C++ functi
 
 extern scanf                                                ;External C++ function for reading from the standard input device
 
-%include "debug.inc"				;allows the debugger to be used in this asm
+%include "debug.inc"										;allows the debugger to be used in this asm
 
 segment .data                                               ;Place initialized data here
 
-stringformat 		db "%s", 0                    ;general string format
+stringformat 		db "%s", 0                    			;general string format
 
 eight_byte_format 	db "%lf", 0                         	;general 8-byte float format
 
@@ -47,15 +47,15 @@ align 64                                                    ;Insure that the ine
 
 backuparea resb 832                                         ;Create an array for backup storage having 832 bytes.
 
-localbackuparea resb 832				;reserve space for backup
+localbackuparea resb 832									;reserve space for backup
 
-segment .text					;Place executable instructions in this segment.
+segment .text												;Place executable instructions in this segment.
 
 ;==========================================================================================================================================================================
 sum: ;===== Begin the application here: calculate sum of array ============================================================================================================
 ;==========================================================================================================================================================================
 
-mov r15, 0					;count
+mov r15, 0						;count
 mov r13, rdi					;holds data array
 mov r14, rsi					;holds size of array
 
