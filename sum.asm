@@ -1,13 +1,13 @@
 ;========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1=========2=========3=========4=========5=========6=========7**
 ;Author information
-;  Author name: Sina Amini	
+;  Author name: Sina Amini  
 ;  Author email: sinamindev@gmail.com
 ;Project information
 ;  Project title: Statistics
 ;  Purpose: To better learn about calling subprograms and how arrays are passed to subprograms
 ;  Status: No known errors
 ;  Project files: passing-driver.cpp, passing.asm, outputdataarray.cpp, sum.asm, inputqarray.asm
-;	        harmonicmean.cpp, reciprocals.asm, variance.asm, mean.asm
+;           harmonicmean.cpp, reciprocals.asm, variance.asm, mean.asm
 ;Module information
 ;  This module's call name: sum
 ;  Language: X86-64
@@ -33,13 +33,13 @@ extern printf                                               ;External C++ functi
 
 extern scanf                                                ;External C++ function for reading from the standard input device
 
-%include "debug.inc"										;allows the debugger to be used in this asm
+%include "debug.inc"                                        ;allows the debugger to be used in this asm
 
 segment .data                                               ;Place initialized data here
 
-stringformat 		db "%s", 0                    			;general string format
+stringformat        db "%s", 0                              ;general string format
 
-eight_byte_format 	db "%lf", 0                         	;general 8-byte float format
+eight_byte_format   db "%lf", 0                             ;general 8-byte float format
 
 segment .bss                                                ;Place un-initialized data here.
 
@@ -47,34 +47,34 @@ align 64                                                    ;Insure that the ine
 
 backuparea resb 832                                         ;Create an array for backup storage having 832 bytes.
 
-localbackuparea resb 832									;reserve space for backup
+localbackuparea resb 832                                    ;reserve space for backup
 
-segment .text												;Place executable instructions in this segment.
+segment .text                                               ;Place executable instructions in this segment.
 
 ;==========================================================================================================================================================================
 sum: ;===== Begin the application here: calculate sum of array ============================================================================================================
 ;==========================================================================================================================================================================
 
-mov r15, 0						;count
-mov r13, rdi					;holds data array
-mov r14, rsi					;holds size of array
+mov r15, 0                                                  ;count
+mov r13, rdi                                                ;holds data array
+mov r14, rsi                                                ;holds size of array
 
 ;==== Begin while loop ====================================================================================================================================================
 
-topofloop:					;starting point of the loop			
+topofloop:                                                  ;starting point of the loop         
 
-movsd xmm1, [r13+r15*8]				;move a value from data array into xmm1
-addpd xmm0, xmm1					;add xmm0 and xmm1 together to find sum
+movsd xmm1, [r13+r15*8]                                     ;move a value from data array into xmm1
+addpd xmm0, xmm1                                            ;add xmm0 and xmm1 together to find sum
 
-inc r15						;incrament the amount of elements added so far
-cmp r14, r15					;checks current amount of elements added with the total amount of elements to be added
+inc r15                                                     ;incrament the amount of elements added so far
+cmp r14, r15                                                ;checks current amount of elements added with the total amount of elements to be added
 
-je outofloop					;jumps out if the number of items added and number of elements in the array are equal
-jmp topofloop					;jumps to the top of the loop if the number of items added is less than the number of elemetns in the array
+je outofloop                                                ;jumps out if the number of items added and number of elements in the array are equal
+jmp topofloop                                               ;jumps to the top of the loop if the number of items added is less than the number of elemetns in the array
 
-outofloop:					;jumps out of loop here
+outofloop:                                                  ;jumps out of loop here
 
-ret						;return to caller
+ret                                                         ;return to caller
 
 ;==========================================================================================================================================================================
 ;End of sum: ; ============================================================================================================================================================

@@ -1,13 +1,13 @@
 ;========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1=========2=========3=========4=========5=========6=========7**
 ;Author information
-;  Author name: Sina Amini	
+;  Author name: Sina Amini  
 ;  Author email: sinamindev@gmail.com
 ;Project information
 ;  Project title: Statistics
 ;  Purpose: To better learn more about calling subprograms and how arrays are passed to subprograms
 ;  Status: No known errors
 ;  Project files: passing-driver.cpp, passing.asm, outputdataarray.cpp, sum.asm, inputqarray.asm
-;	        harmonicmean.cpp, reciprocals.asm, variance.asm, mean.asm
+;           harmonicmean.cpp, reciprocals.asm, variance.asm, mean.asm
 ;Module information
 ;  This module's call name: passing
 ;  Language: X86-64
@@ -32,76 +32,76 @@ extern printf                                               ;External C++ functi
 
 extern scanf                                                ;External C++ function for reading from the standard input device
 
-extern getchar												;External C++ function for reading characters from standard input device
+extern getchar                                              ;External C++ function for reading characters from standard input device
 
-extern inputqarray											;External function for reading data into an array
+extern inputqarray                                          ;External function for reading data into an array
 
-extern outputdatarray										;External C++ function for outputting data in an array
+extern outputdatarray                                       ;External C++ function for outputting data in an array
 
-extern mean													;External function for finding average of dat in an array
+extern mean                                                 ;External function for finding average of dat in an array
 
-extern variance												;External C++ function for calculating variance of data in an array
+extern variance                                             ;External C++ function for calculating variance of data in an array
 
-extern harmonicmean											;External C++ function for calculating harmonic mean of dat an array
+extern harmonicmean                                         ;External C++ function for calculating harmonic mean of dat an array
 
-extern sum													;External function for calculating the sum of an array
+extern sum                                                  ;External function for calculating the sum of an array
 
-global passing                                        		;This makes passing callable by functions outside of this file.
+global passing                                              ;This makes passing callable by functions outside of this file.
 
-%include "debug.inc"										;Allows debug.inc to be used in this asm file
+%include "debug.inc"                                        ;Allows debug.inc to be used in this asm file
 
 segment .data                                               ;Place initialized data here
 
 ;===== Declare some messages ==============================================================================================================================================
 
-initialmessage          	db "Welcome to Array Processing", 10, 10, 0
+initialmessage              db "Welcome to Array Processing", 10, 10, 0
 
-echostart 		db 10, "Thank you this is the array: ", 10, 0
+echostart                   db 10, "Thank you this is the array: ", 10, 0
 
-echoformat 		db 10, "The sum of the array is %.8lf", 10, 0
+echoformat                  db 10, "The sum of the array is %.8lf", 10, 0
 
-echomean 			db 10, "The mean of the array is %.8lf", 10, 0
+echomean                    db 10, "The mean of the array is %.8lf", 10, 0
 
-echovariance 		db 10, "The variance of the array is %.8lf", 10, 0
+echovariance                db 10, "The variance of the array is %.8lf", 10, 0
 
-echoharmonic 		db 10, "The harmonic mean of the array is %.8lf", 10, 0
+echoharmonic                db 10, "The harmonic mean of the array is %.8lf", 10, 0
 
-echoreciprocals 		db 10, "The array pf reciprocals is ", 10, 0
+echoreciprocals             db 10, "The array pf reciprocals is ", 10, 0
 
-goodbye 		db 10, "This assembly program will now terminate and send the harmonic mean to the driver. ",10, 10,0       		
+goodbye                     db 10, "This assembly program will now terminate and send the harmonic mean to the driver. ",10, 10,0               
 
 xsavenotsupported.notsupportedmessage db "The xsave instruction and the xrstor instruction are not supported in this microprocessor.", 10
                                       db "However, processing will continue without backing up state component data", 10, 0
 
-stringformat 		db "%s", 0                    ;general string format
+stringformat                db "%s", 0                      ;general string format
 
 xsavenotsupported.stringformat db "%s", 0
 
-eight_byte_format 	db "%.8lf",10, 0                        ;general 8-byte float format
+eight_byte_format           db "%.8lf",10, 0                ;general 8-byte float format
 
-integer_format 		db "%ld",0		;general integer format
+integer_format              db "%ld",0                      ;general integer format
 
 segment .bss                                                ;Place un-initialized data here.
 
 align 64                                                    ;Insure that the inext data declaration starts on a 64-byte boundar.
 
 backuparea resb 832                                         ;Create an array for backup storage having 832 bytes.
-localbackuparea resb 832				;reserve space for backup
+localbackuparea resb 832                                    ;reserve space for backup
 
-data resq 15					;create data array of size 15
-pointer resq 15					;creata pointer array of size 15
+data resq 15                                                ;create data array of size 15
+pointer resq 15                                             ;creata pointer array of size 15
 reciprocals resq 15
 
-segment .text 					;Place executable instructions in this segment.
-mov rdx, 0					;prepare rdx
-mov rax, 7					;machine supports avx
-xsave  [localbackuparea]				;backup area
+segment .text                                               ;Place executable instructions in this segment.
+mov rdx, 0                                                  ;prepare rdx
+mov rax, 7                                                  ;machine supports avx
+xsave  [localbackuparea]                                    ;backup area
 
 ;===== Begin executable instructions here =================================================================================================================================
 
 segment .text                                               ;Place executable instructions in this segment.
 
-passing:                                              	;Entry point.  Execution begins here.
+passing:                                                    ;Entry point.  Execution begins here.
 
 ;=========== Back up all the GPRs whether used in this program or not =====================================================================================================
 
@@ -174,29 +174,29 @@ mov        r9,  [rsp+56]
 startapplication: ;===== Begin the application here: Amortization Schedule ================================================================================================
 ;==========================================================================================================================================================================
 
-vzeroall						;place binary zeros in all components of all vector register in SSE
+vzeroall                        ;place binary zeros in all components of all vector register in SSE
 
 ;==== Show the initial message ============================================================================================================================================
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                  ;move 0 to prepare for backup
+mov rax, 7                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                ;backup registers to localbackuparea
 
 mov qword  rax, 0                                           ;No data from SSE will be printed
 mov        rdi, stringformat                                ;"%s"
 mov        rsi, initialmessage                              ;"Welcome to Array Processing"
 call       printf                                           ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                  ;prepare to restore
+mov rax, 7                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                   ;restore backed up registers
 ;==== Calls inputqarray function ==========================================================================================================================================
 
-mov rdi, data					;move data array into rdi for inputqarray
-call inputqarray					;call inputqarray to recieve values from user
-mov r15, rax					;move size of array from rax into r15
-mov r9, 0						;set r9 equal to 0 for comparison
-cmp r15, r9					;compare size of array with 0 to check if user entered anything into array
-je Empty						;Jumps to empty if the array is empty
+mov rdi, data                                               ;move data array into rdi for inputqarray
+call inputqarray                                            ;call inputqarray to recieve values from user
+mov r15, rax                                                ;move size of array from rax into r15
+mov r9, 0                                                   ;set r9 equal to 0 for comparison
+cmp r15, r9                                                 ;compare size of array with 0 to check if user entered anything into array
+je Empty                                                    ;Jumps to empty if the array is empty
 
 ;==== Output array information ============================================================================================================================================
 
@@ -205,147 +205,147 @@ mov        rdi, stringformat                                ;"%s"
 mov        rsi, echostart                                   ;"Thank you this is the array:   "
 call       printf                                           ;Call a library function to make the output
 
-mov rdi, data					;move data array into rdi for outputdatarray to recieve
-mov rsi, r15					;move size of data array into rsi for outputdatarray to recieve
-call outputdatarray					;call outputdatarray function to output the data in the array. 
+mov rdi, data                                               ;move data array into rdi for outputdatarray to recieve
+mov rsi, r15                                                ;move size of data array into rsi for outputdatarray to recieve
+call outputdatarray                                         ;call outputdatarray function to output the data in the array. 
 
 ;==== Output sum of array =================================================================================================================================================
 
-mov rdi, data					;move data array into rdi for sum function to recieve
-mov rsi, r15					;move size of data array into rsi for sum function to recieve
-call sum						;call the sum module to calculate and output the sum of data array
+mov rdi, data                                               ;move data array into rdi for sum function to recieve
+mov rsi, r15                                                ;move size of data array into rsi for sum function to recieve
+call sum                                                    ;call the sum module to calculate and output the sum of data array
 
 ;==== Output sum of array =================================================================================================================================================
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
-mov   rax, 1                                           	;No data from SSE will be printed
-mov   rdi, echoformat                                  	;"The sum of the array is %.8lf  "
-call  printf                                           	;Call a library function to make the output
+mov   rax, 1                                                ;No data from SSE will be printed
+mov   rdi, echoformat                                       ;"The sum of the array is %.8lf  "
+call  printf                                                ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
 ;==== call variance function =================================================================================================================================================
 
-mov rdi, data					;move data array into rdi for sum function to recieve
-mov rsi, r15					;move size of data array into rsi for sum function to recieve
+mov rdi, data                                               ;move data array into rdi for sum function to recieve
+mov rsi, r15                                                ;move size of data array into rsi for sum function to recieve
 
-call variance					;call the variance module to calculate the variance of data array
+call variance                                               ;call the variance module to calculate the variance of data array
 
-movsd xmm0,[rax]					;store value of mean inside xmm0
-movsd xmm1,[rax+8]					;store value of variance inside xmm1
+movsd xmm0,[rax]                                            ;store value of mean inside xmm0
+movsd xmm1,[rax+8]                                          ;store value of variance inside xmm1
 
 
 ;==== Output mean of array ================================================================================================================================================
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
-mov   rax,  1                                          	;One data from SSE will be printed
-mov   rdi, echomean                                  	;"The mean of the array is %.8lf  "
+mov   rax,  1                                               ;One data from SSE will be printed
+mov   rdi, echomean                                         ;"The mean of the array is %.8lf  "
 
-call  printf                                           	;Call a library function to make the output
+call  printf                                                ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
 ;==== Output variance of array ============================================================================================================================================
-movsd xmm0,xmm1  					;move variance into xmm0 for prining
+movsd xmm0,xmm1                                             ;move variance into xmm0 for prining
 
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
-mov   rax, 1                                           	;One data from SSE will be printed
-mov   rdi, echovariance                                  	;"The variance of the array is %.8lf  "
-call  printf                                           	;Call a library function to make the output
+mov   rax, 1                                                ;One data from SSE will be printed
+mov   rdi, echovariance                                     ;"The variance of the array is %.8lf  "
+call  printf                                                ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
 ;=== Call function to compute Harmonic mean ===============================================================================================================================
-mov rdi, data					;move the data array into rdi for harmonicmean to recieve
-mov rsi, r15					;move the size of data array into rsi for harmonicmean to recieve
-mov rdx, reciprocals				;move reciprocal array into rdx for harmonicmean to recieve
-call harmonicmean					;call the harmonicmean module to calculate the harmonic mean of data array
+mov rdi, data                                               ;move the data array into rdi for harmonicmean to recieve
+mov rsi, r15                                                ;move the size of data array into rsi for harmonicmean to recieve
+mov rdx, reciprocals                                        ;move reciprocal array into rdx for harmonicmean to recieve
+call harmonicmean                                           ;call the harmonicmean module to calculate the harmonic mean of data array
 
 ;==== Output Harmonic mean of array =======================================================================================================================================
-push qword 0					;prepare space on the stack	
-movsd [rsp],xmm0					;move variance from xmm0 onto stack
-mov r14,[rsp]					;move variance from stack into r14 to be returned to driver 
-pop rax						;free space on the stack
+push qword 0                                                ;prepare space on the stack 
+movsd [rsp],xmm0                                            ;move variance from xmm0 onto stack
+mov r14,[rsp]                                               ;move variance from stack into r14 to be returned to driver 
+pop rax                                                     ;free space on the stack
 
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
-mov   rax, 1                                           	;One data from SSE will be printed
-mov   rdi, echoharmonic                                  	;"The variance of the array is %.8lf  "
-call  printf                                           	;Call a library function to make the output
+mov   rax, 1                                                ;One data from SSE will be printed
+mov   rdi, echoharmonic                                     ;"The variance of the array is %.8lf  "
+call  printf                                                ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
 ;=== Output the array of reciprocals ======================================================================================================================================
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
-mov   rax, 1                                           	;One data from SSE will be printed
+mov   rax, 1                                                ;One data from SSE will be printed
 mov   rdi, echoreciprocals                                  ;"The array of reciprocals is"
-call  printf                                           	;Call a library function to make the output
+call  printf                                                ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
-mov r12, 0					;move zero into r12 to keep track of loop count			
+mov r12, 0                                                  ;move zero into r12 to keep track of loop count         
 
-topofloop:					;top of the loop to output reciprocals
+topofloop:                                                  ;top of the loop to output reciprocals
 
-movsd xmm0, [reciprocals+8*r12]			;move address of a location in reciprocals array into xmm0
+movsd xmm0, [reciprocals+8*r12]                             ;move address of a location in reciprocals array into xmm0
 
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
-mov   rax, 1                                           	;One data from SSE will be printed
+mov   rax, 1                                                ;One data from SSE will be printed
 mov   rdi, eight_byte_format                                ;"%.8lf"
-call  printf                                           	;Call a library function to make the output
+call  printf                                                ;Call a library function to make the output
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
-inc r12						;incremant the count of elements being enter
-cmp r15, r12					;checks the current number of elemetns with the total elements of data array
+inc r12                                                     ;incremant the count of elements being enter
+cmp r15, r12                                                ;checks the current number of elemetns with the total elements of data array
 
-je outofloop					;jumps out of loop if both array sizes are equal
-jmp topofloop					;jumps to the top of the loop if the pointer array size is less than the data array size
+je outofloop                                                ;jumps out of loop if both array sizes are equal
+jmp topofloop                                               ;jumps to the top of the loop if the pointer array size is less than the data array size
 
-outofloop:					;position to jump out of loop
+outofloop:                                                  ;position to jump out of loop
 
-Empty:						;Jumps here if user decides not to enter anything into data array
+Empty:                                                      ;Jumps here if user decides not to enter anything into data array
 
 ;===== Conclusion message =================================================================================================================================================
-mov rdx, 0					;move 0 to prepare for backup
-mov rax, 7					;machine supports avx registers to backup
-xsave  [localbackuparea]			 	;backup registers to localbackuparea
+mov rdx, 0                                                  ;move 0 to prepare for backup
+mov rax, 7                                                  ;machine supports avx registers to backup
+xsave  [localbackuparea]                                    ;backup registers to localbackuparea
 
 mov qword  rax, 0                                           ;No data from SSE will be printed
 mov        rdi, stringformat                                ;"%s"
-mov        rsi, goodbye                                     ;"This assembly program will now terminate and send the harmonic mean to the driver." 							 
+mov        rsi, goodbye                                     ;"This assembly program will now terminate and send the harmonic mean to the driver."                            
 call       printf                                           ;Call a llibrary function to do the hard work.
 
-mov rdx, 0					;prepare to restore
-mov rax, 7					;machine should restore up to ymm registers
-xrstor  [localbackuparea]			    	;restore backed up registers
+mov rdx, 0                                                  ;prepare to restore
+mov rax, 7                                                  ;machine should restore up to ymm registers
+xrstor  [localbackuparea]                                   ;restore backed up registers
 
 ;Now the stack is in the same state as when the application area was entered.  It is safe to leave this application area.
 
